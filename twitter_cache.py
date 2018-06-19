@@ -7,6 +7,7 @@ consumer_key = os.environ.get('twitter_consumerkey')
 consumer_secret = os.environ.get('twitter_consumersecret')
 access_token = os.environ.get('twitter.accesstokenkey')
 access_token_secret = os.environ.get('twitter.accesstokensecret')
+beamlink_secretkey = os.environ.get('beamlink_secretkey')
 
 #Target server ip addresses
 #Target port: 5000 for each server (important)
@@ -25,6 +26,11 @@ if access_token is None:
 
 if access_token_secret is None:
 	raise Exception('Access token secret required')
+
+#This secret key is to prevent unauthorised access to the interface on the beamlink One devices
+#The other security measure is to prevent access from the outside on port 5000
+if beamlink_secretkey is None:
+	raise Exception('Beamlink secret key required')
 
 #Returns the API object for tweepy
 #Use to refresh access
@@ -63,11 +69,12 @@ def sendNewData(tweets):
 	for client in clients: #For each beamlink system to update
 		target = "http://" + client + ":" + str(port)
 		try:
-			r = requests.post(target, data={'tweets', tweets})
-			if r.status_code != requests.code.ok:
+			payload = {"secret_key" : beamlink_secretkey, "tweets" : tweets} #Generate the payload for POST request
+			r = requests.post(target, data=payload)
+			if r.status_code != requests.code.ok: #If the status code is not acceptable, report the error to the console
 				print "Error occured when posting to: " + client
 				print r.status_code
-		except Exception e:
+		except Exception, e:
 			print e.message
 
 if __name__ == "__main__":
