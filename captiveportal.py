@@ -6,9 +6,9 @@ import json
 app = Flask(__name__)
 
 cached_tweets = "" #Store the latest tweets in memory locally
-beamlink_secretkey = os.environ.get('beamlink_secretkey')
-if beamlink_secretkey is None:
-	raise Exception('Beamlink secret key required')
+#beamlink_secretkey = os.environ.get('beamlink_secretkey')
+#if beamlink_secretkey is None:
+#	raise Exception('Beamlink secret key required')
 
 #Test method
 @app.route('/hello')

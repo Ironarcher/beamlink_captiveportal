@@ -30,10 +30,11 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth) #Initialize the API
 
-results = api.search(q="fema", count=1) #Fill query with desired information
+results = api.search(q="fema", count=5, include_entities=True) #Fill query with desired information
 tweets = [] #Blank list, will be filled with tweets but with most data cut out
 for result in results: #For each tweet
 	raw_json = result._json
+	print result
 	#Pull all relevant information out of the tweets
 	text = raw_json.get("text", "Error: No text")
 	favorites = raw_json.get("favorite_count", 0)

@@ -7,7 +7,7 @@ consumer_key = os.environ.get('twitter_consumerkey')
 consumer_secret = os.environ.get('twitter_consumersecret')
 access_token = os.environ.get('twitter.accesstokenkey')
 access_token_secret = os.environ.get('twitter.accesstokensecret')
-beamlink_secretkey = os.environ.get('beamlink_secretkey')
+#beamlink_secretkey = os.environ.get('beamlink_secretkey')
 
 #Target server ip addresses
 #Target port: 5000 for each server (important)
@@ -29,8 +29,8 @@ if access_token_secret is None:
 
 #This secret key is to prevent unauthorised access to the interface on the beamlink One devices
 #The other security measure is to prevent access from the outside on port 5000
-if beamlink_secretkey is None:
-	raise Exception('Beamlink secret key required')
+#if beamlink_secretkey is None:
+#	raise Exception('Beamlink secret key required')
 
 #Returns the API object for tweepy
 #Use to refresh access
