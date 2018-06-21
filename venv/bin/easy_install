@@ -1,4 +1,4 @@
-#!/mnt/c/users/Arpad/code/captiveportal/venv/bin/python2
+#!/Users/Mateo/Documents/beamlink_captiveportal/venv/bin/python2
 
 # -*- coding: utf-8 -*-
 import re

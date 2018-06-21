@@ -1,9 +1,17 @@
 #Load on Beamlink One devices
 #Serves captive portal for disaster relief victims, rescuers, and volunteers
 from flask import Flask, render_template, request
+from flask_twitter_oembedder import TwitterOEmbedder
+from flask_cache import Cache
 import os
 import json
+
+twitter_oembedder = TwitterOEmbedder()
+
 app = Flask(__name__)
+cache = Cache(app)
+
+twitter_oembedder.init(app,cache)
 
 cached_tweets = "" #Store the latest tweets in memory locally
 #beamlink_secretkey = os.environ.get('beamlink_secretkey')

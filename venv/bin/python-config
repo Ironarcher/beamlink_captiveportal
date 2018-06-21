@@ -1,4 +1,4 @@
-#!/mnt/c/users/Arpad/code/captiveportal/venv/bin/python
+#!/Users/mateo/Documents/beamlink_captiveportal/venv/bin/python
 
 import sys
 import getopt

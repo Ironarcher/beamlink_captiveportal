@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: Flask-Twitter-OEmbedder
+Version: 0.1.7
+Summary: Embedded tweets in Flask Jinja2 Templates with only the Tweet_ID
+Home-page: https://github.com/eriktaubeneck/flask-twitter-oembedder
+Author: Erik Taubeneck
+Author-email: erik.taubeneck@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: any
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
