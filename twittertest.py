@@ -6,8 +6,8 @@ import json
 app = Flask(__name__)
 consumer_key = os.environ.get('twitter_consumerkey')
 consumer_secret = os.environ.get('twitter_consumersecret')
-access_token = os.environ.get('twitter.accesstokenkey')
-access_token_secret = os.environ.get('twitter.accesstokensecret')
+access_token = os.environ.get('twitter_accesstokenkey')
+access_token_secret = os.environ.get('twitter_accesstokensecret')
 
 #Target server ip addresses
 #Target port: 5000 for each server (important)
@@ -34,8 +34,9 @@ results = api.search(q="fema", count=5, include_entities=True) #Fill query with 
 tweets = [] #Blank list, will be filled with tweets but with most data cut out
 for result in results: #For each tweet
 	raw_json = result._json
-	print result
+	#print result
 	#Pull all relevant information out of the tweets
+	print result.id
 	text = raw_json.get("text", "Error: No text")
 	favorites = raw_json.get("favorite_count", 0)
 	retweets = raw_json.get("retweet_count", 0)
