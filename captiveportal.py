@@ -21,7 +21,7 @@ def hello_world():
 #Main page
 @app.route('/')
 def index():
-	return render_template('index.html', tweets=tweets)
+	return render_template('beamlink_captiveportal.html', tweets=tweets)
 	#return render_template('index.html', tweets=cached_tweets)
 
 #Receiver from the web server on the VPN host

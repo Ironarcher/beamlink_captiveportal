@@ -60,5 +60,5 @@ def index():
 		tweet_urls = searchTweets() #Use updated information
 	else:
 		tweet_urls = cached_tweets #Else use cached information
-	return render_template('index.html', tweets=tweet_urls) #Render template, with list of tweet id's to display using twitter's lightweight javascript library
+	return render_template('beamlink_captiveportal.html', tweets=tweet_urls) #Render template, with list of tweet id's to display using twitter's lightweight javascript library
 

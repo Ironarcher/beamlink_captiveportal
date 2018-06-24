@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<title>Portable Cell Initiative</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</head>
+
+<style type="text/css">
+	body {
+		font-family: "Source Sans Pro", sans-serif;
+	}
+
+	#intro {
+		text-align: center;
+		background: #3498db;
+		width: 90%;
+		border-radius: 10px;
+		margin-left: 5%;
+	}
+
+	#intro p {
+		padding: 2% 4% 2% 4%;
+		color: #fff;
+	}
+
+	#numbers {
+		margin-left: 5%;
+		border: .5px solid #93a4aa;
+	    border-radius: 10px;
+	    text-align: center;
+	    height:200px;
+	    overflow:hidden;
+	    margin-right:5%;
+	}
+
+	#tweet-box {
+		width: 90%;
+	    height: 546px;
+	    border: .5px solid #93a4aa;
+	    border-radius: 10px;
+	    overflow:hidden;
+	    margin-left:5%;
+	    margin-right:5%;
+	    margin-top: 3%;
+	}
+
+	@media screen and (min-width: 780px) {
+		#numbers {
+			flex:1;
+			margin-right:0;
+		}
+
+		#wrapper {
+			display:flex;
+			width:100%;
+		}
+
+		#tweet-box {
+			width: 60%;
+			margin-top: 0%;
+		}
+	}
+
+	.twitter-tweet {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.header {
+		background: #3498db;
+		color: white;
+		text-align:left;
+	}
+
+	.header h3 {
+		margin:0;
+		padding: 11px;
+		padding-left:5%;
+	}
+
+	#tweets {
+		overflow-y: scroll;
+		height: 500px;
+	}
+}
+
+</style>
+
+<body>
+<div id="intro">
+	<p>You are currently connected to a temporary Beamlink cell tower.  These have been deployed in the current disaster zone.  You can call and text as usual, but please only call 911 if you are injured or are in imminent danger.  This landing page will be regularly updated with alerts from FEMA.</p>
+</div>
+
+<div id="wrapper">
+	<div id="numbers">
+		<div class="header">
+			<h3><i class="fas fa-phone"></i> &nbsp;&nbsp; Important Numbers</h3>
+		</div>
+		<p><br>Emergency: 911 <br><br>
+		FEMA: 1 (800) 621-3362</p>
+	</div>
+	<div id="tweet-box">
+		<div class="header">
+			<h3><i class="fab fa-twitter"></i> &nbsp;&nbsp;@fema</h3>
+		</div>
+		<div id="tweets">
+			{% for url in tweets %}
+			<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="{{ url }}"></a></blockquote>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
