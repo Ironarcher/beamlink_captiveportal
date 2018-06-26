@@ -39,7 +39,7 @@ def init_twitter():
 
 def searchTweets():
 	api = init_twitter()
-	results = api.search(q="fema", count=5) #Fill query with desired information
+	results = api.search(q="from:fema", count=5) #Fill query with desired information
 	urls = [] #Blank list, will be filled with tweets but with most data cut out
 	for result in results: #For each tweet
 		#print result.entities.get('urls')[0].get('expanded_url')
